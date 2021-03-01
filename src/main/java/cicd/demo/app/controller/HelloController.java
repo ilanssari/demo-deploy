@@ -10,7 +10,7 @@ import io.micronaut.http.annotation.Get;
 
 @Controller("/hello")
 public class HelloController {
-
+    // test comment
     @Get(produces = MediaType.TEXT_PLAIN)
     public String index() throws IOException {
         // Read META-INF/maven/com.google.guava/guava/pom.properties from classpath
