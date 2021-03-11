@@ -21,7 +21,7 @@ jobs:
         id: status
         env:
           PROJECT_NAME: ${{ github.event.repository.name }}
-        run: chmod +x "${GITHUB_WORKSPACE}/.github/check_deployment.sh" && bash -c "${GITHUB_WORKSPACE}/.github/check_deployment.sh
+        run: chmod +x "${GITHUB_WORKSPACE}/.github/check_deployment.sh" && bash -c "${GITHUB_WORKSPACE}/.github/check_deployment.sh"
   # Write the status of the migration on the PR
   comment_to_pr:
     name: Write the status of the deployment on the PR
