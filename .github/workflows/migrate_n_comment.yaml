@@ -15,10 +15,12 @@ jobs:
     steps:
       # Open the gate to migrate to the production
       - name: Confirm deployment
-        run: kubectl -n default exec -it oraclelinux-69dc87457-wjb2h -- sh -c './open_gate_osscan_demo.sh'
+        run: kubectl -n ${{ github.event.repository.name }} exec -it oraclelinux-69dc87457-wjb2h -- sh -c './open_gate_osscan_demo.sh'
       # check and store the status of the Deployment
       - name: Check deployment status
         id: status
+        env:
+          PROJECT_NAME: ${{ github.event.repository.name }}
         run: chmod +x "${GITHUB_WORKSPACE}/.github/check_deployment.sh" && bash -c "${GITHUB_WORKSPACE}/.github/check_deployment.sh
   # Write the status of the migration on the PR
   comment_to_pr:
