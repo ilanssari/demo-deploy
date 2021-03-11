@@ -2,7 +2,9 @@
 
 iterations=$(kubectl -n $PROJECT_NAME get canary/$PROJECT_NAME -o jsonpath={.status.iterations})
 
-while [ "$iterations" -gt 1 ]
+echo $iterations
+
+while [ $iterations -gt 1 ]
 do
   echo "Waiting the Canary job to start"
   sleep 5
@@ -11,7 +13,7 @@ done
 
 # counting the iterations
 
-while [ "$iterations" -lt 2 ]
+while [ $iterations -lt 2 ]
 do
   echo "Waiting the canary iterations to finish"
   sleep 5
