@@ -19,7 +19,7 @@ jobs:
       # check and store the status of the Deployment
       - name: Check deployment status
         id: status
-        run: bash -c "${GITHUB_WORKSPACE}/.github/check_deployment.sh
+        run: chmod +x "${GITHUB_WORKSPACE}/.github/check_deployment.sh" && bash -c "${GITHUB_WORKSPACE}/.github/check_deployment.sh
   # Write the status of the migration on the PR
   comment_to_pr:
     name: Write the status of the deployment on the PR
