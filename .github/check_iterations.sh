@@ -2,8 +2,6 @@
 
 iterations=$(kubectl -n $PROJECT_NAME get canary/$PROJECT_NAME -o jsonpath={.status.iterations})
 
-echo $iterations
-
 while [ $iterations -gt 1 ]
 do
   echo "Waiting the Canary job to start"

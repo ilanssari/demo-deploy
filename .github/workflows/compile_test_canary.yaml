@@ -93,6 +93,8 @@ jobs:
       # This steps checks the status of the deployment and then return the status of the deployment ("Failed" or "succeeded") and also return 0 if the deployment succeeded and the 1 if not
       - name: Check deployment status
         id: status
+        env:
+          PROJECT_NAME: ${{ github.event.repository.name }}
         run: chmod +x "${GITHUB_WORKSPACE}/.github/check_iterations.sh" && bash -c "${GITHUB_WORKSPACE}/.github/check_iterations.sh"
   # the goal of this job is write a comment with the status of the deployment in the PR
   comment_to_pr:
