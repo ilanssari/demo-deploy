@@ -100,7 +100,7 @@
           <execution>
             <phase>compile</phase>
             <goals>
-              <goal>scan</goal>
+              <!-- <goal>scan</goal> -->
             </goals>
           </execution>
         </executions>
