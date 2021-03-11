@@ -18,7 +18,7 @@ do
   errors=$(kubectl -n $PROJECT_NAME get canary/$PROJECT_NAME -o jsonpath={.status.failedChecks})
   if [ $errors -gt 0 ]
   then
-    echo "the hook test failed! errors : $errors"
+    echo "the hook test failed!"
     echo "::set-output name=status::$(echo failed)"
     exit 1
   fi
