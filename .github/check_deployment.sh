@@ -4,7 +4,7 @@
 
 ok=false
 until ${ok}; do
-    kubectl get canary/$PROJECT_NAME -n $PROJECT_NAME | grep 'Progressing' && ok=true || ok=false
+    kubectl get canary/$PROJECT_NAME -n $PROJECT_NAME | grep 'Progressing\|Failed\|Succeeded' && ok=true || ok=false
     sleep 5
 done
 
