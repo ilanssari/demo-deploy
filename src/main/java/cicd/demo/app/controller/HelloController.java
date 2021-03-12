@@ -23,6 +23,6 @@ public class HelloController {
                 throw new RuntimeException("Expected Guava 23.6-jre, but got: " + guavaVersion);
             }
         }
-        return "Canary successfully deployed!";
+        return "Canary successfully deployed! oh yeaah";
     }
 }
